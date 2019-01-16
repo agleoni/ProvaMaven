@@ -1,5 +1,6 @@
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.util.LocationMapper;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -21,6 +22,8 @@ public class IndexView {
 
 	@PostConstruct
 	public void init(){
+
+		LocationMapper.setGlobalLocationMapper(new LocationMapper());
 
 		//Commenting the line below everything work
 		OntModel model = ModelFactory.createOntologyModel();
